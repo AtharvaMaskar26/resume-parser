@@ -1,0 +1,13 @@
+prefix=D:/resume-builder/venv/Library
+exec_prefix=D:/resume-builder/venv/Library
+libdir=D:/resume-builder/venv/Library/lib
+sharedlibdir=D:/resume-builder/venv/Library/lib
+includedir=D:/resume-builder/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
