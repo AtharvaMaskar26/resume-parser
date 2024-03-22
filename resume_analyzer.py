@@ -59,7 +59,6 @@ def show_resume_analyzer_page():
 #submit2 = st.button("How Can I Improvise my Skills")
 
     submit3 = st.button("Percentage match")
-    submit4 = st.text_input("Enter any further questions you might have: ")
 
     input_prompt1 = """
         You are an experienced Technical Human Resource Manager,your task is to review the provided resume against the job description. 
@@ -80,8 +79,6 @@ def show_resume_analyzer_page():
     the job description. Give keyword Optimisation tips to improve visibility of the resume in ATS
  and prevent it from getting rejected, explain it in detail that would help the candidate.First the output should come as percentage and then keywords missing and last final thoughts.
     """
-
-    input_prompt4 = input_prompt1 + input_prompt2 + input_prompt3
 
     if submit1:
         if uploaded_file is not None:
@@ -105,14 +102,6 @@ def show_resume_analyzer_page():
         if uploaded_file is not None:
             pdf_content=input_pdf_setup(uploaded_file)
             response=get_gemini_response(input_prompt3,pdf_content,input_text)
-            st.subheader("The Response is")
-            st.write(response)
-        else:
-            st.write("Please uplaod the resume")
-    if submit4:
-        if uploaded_file is not None:
-            pdf_content=input_pdf_setup(uploaded_file)
-            response=get_gemini_response(input_prompt4,pdf_content,input_text+submit4)
             st.subheader("The Response is")
             st.write(response)
         else:
